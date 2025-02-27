@@ -25,7 +25,7 @@ jobs:
       - run: npm run build
   
   docker:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       -
         name: Login to Docker Hub
@@ -44,5 +44,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: user/simplets:latest
+          tags: leandroinf23/simplets:latest
 
