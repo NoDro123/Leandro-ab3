@@ -2,4 +2,4 @@
 
 This is a simple starter for TypeScript projects.
 
-new test 3
+new test 4
