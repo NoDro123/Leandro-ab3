@@ -6,6 +6,10 @@ COPY ./ /usr/app
 
 RUN npm install --legacy-peer-deps
 
+RUN npm run lint
+
+RUN npm run test
+
 RUN npm run build
 
 CMD ["npm", "run", "start"]
