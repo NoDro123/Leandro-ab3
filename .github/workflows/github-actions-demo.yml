@@ -2,16 +2,25 @@ name: GitHub Actions Demo
 run-name: CI
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  lint:
     runs-on: [self-hosted, linux, x64]
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "Install dependencies"
       - run: npm install
-      - run: echo "Running lint"
       - run: npm run lint
-      - run: echo "Running test"
+  test:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: npm install
       - run: npm run test
-      - run: echo "Running build"
+   build:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: npm install
       - run: npm run build
+  
