@@ -5,6 +5,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: [self-hosted, linux, x64]
     steps:
+<<<<<<< HEAD
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
@@ -16,3 +17,12 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job"s status is ${{ job.status }}."
+=======
+      - run: echo "Running lint"
+      - run: npm run lint
+      - run: echo "Running test"
+      - run: npm run test
+      - run: echo "Running build"
+      - run: npm run build
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+>>>>>>> 3ac8aa37eb9eb698d1d2aa73f7638065f58b284d
